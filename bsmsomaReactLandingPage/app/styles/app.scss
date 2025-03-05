@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+// light mode
+$lightTextColor: #2d3436; // Charcoal gray for text
+$lightBackgroundColor: #ffffff; // Pure white background
+$lightAccentColor: #0984e3; // Clean blue accent
+$lightSecondaryColor: #00b894; // Fresh mint green
+$lightTertiaryColor: #6c5ce7; // Soft purple
+$lightNeutralColor: #dfe6e9; // Light gray for borders/dividers
+
+// dark mode
+$darkTextColor: #ff71ce; // Neon pink
+$darkBackgroundColor: #1a1b26; // Dark blue-black
+$darkAccentColor: #00fff9; // Cyan
+$darkSecondaryColor: #b967ff; // Purple
+
+@mixin themeStyles($bg, $text) {
+  background-color: $bg;
+  color: $text;
+}
+
+.navbar {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+
+  &.light {
+    @include themeStyles($lightBackgroundColor, $lightTextColor);
+  }
+
+  &.dark {
+    @include themeStyles($darkBackgroundColor, $darkTextColor);
+  }
+
+  .titles {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: 'Inter', sans-serif;
+  }
+
+  .navbarlinks {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+
+    a {
+      text-decoration: none;
+      font-family: 'Inter', sans-serif;
+      padding: 0.5rem;
+      &:visited,
+      &:active,
+      &:link {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      // Remove outline ao clicar (opcional)
+      &:focus {
+        outline: none;
+      }
+    }
+  }
+
+  .theme-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 1rem;
+
+    &.dark {
+      svg {
+        stroke: $darkAccentColor;
+      }
+    }
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+
+    }
+  }
+}
+
+.navbar-border {
+  width: 100%;
+  height: 1px;
+  margin: 0 auto;
+
+  &.light {
+    border-bottom: 1px solid $lightTextColor;
+  }
+  &.dark {
+    border-bottom: 1px solid $darkTextColor;  
+  }
+}
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 4rem;
+  width: 100%;
+  padding: 0 1rem;
+  p {
+    font-family: 'Inter', sans-serif;
+    margin: 0 auto;
+    font-size: 0.8rem;
+  }
+  &.light {
+    @include themeStyles($lightBackgroundColor, $lightTextColor);
+  }
+
+  &.dark {
+    @include themeStyles($darkBackgroundColor, $darkTextColor);
+  }
+}
+.footer-border {
+  width: 100%;
+  height: 1px;
+  margin: 0 auto;
+
+  &.light {
+    border-bottom: 1px solid $lightTextColor;
+  }
+  &.dark {
+    border-bottom: 1px solid $darkTextColor;  
+  }
+
+}
