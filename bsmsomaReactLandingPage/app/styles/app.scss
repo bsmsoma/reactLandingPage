@@ -3,6 +3,10 @@
   padding: 0;
   box-sizing: border-box;
 }
+// Cyberpunk theme colors
+$cyberpunk-primary: #ff0055;    // Neon pink
+$cyberpunk-secondary: #041616;  // Cyan
+$cyberpunk-dark: #0a0b14;      // Darker background for better readability
 
 // light mode
 $lightTextColor: #2d3436; // Charcoal gray for text
@@ -23,7 +27,23 @@ $darkSecondaryColor: #b967ff; // Purple
   color: $text;
 }
 
+// Media Queries dammn mixins always have to be at the top of the file?
+@mixin tablet {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: 480px) {
+    @content;
+  }
+}
+
 .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
@@ -33,10 +53,12 @@ $darkSecondaryColor: #b967ff; // Purple
 
   &.light {
     @include themeStyles($lightBackgroundColor, $lightTextColor);
+    border-bottom: 1px solid $lightTextColor; 
   }
 
   &.dark {
     @include themeStyles($darkBackgroundColor, $darkTextColor);
+    border-bottom: 1px solid $darkTextColor;
   }
 
   .titles {
@@ -44,6 +66,9 @@ $darkSecondaryColor: #b967ff; // Purple
     align-items: center;
     gap: 0.5rem;
     font-family: 'Inter', sans-serif;
+    h3 {
+      margin-top: 0.3rem;  
+    }
   }
 
   .navbarlinks {
@@ -92,50 +117,213 @@ $darkSecondaryColor: #b967ff; // Purple
 
     }
   }
+  .mobile-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+  @include mobile {
+    padding: 0.5rem;
+    height: 3.5rem;
+
+    .navbarlinks {
+      display: none; // Will be replaced with a mobile menu
+    }
+    .mobile-menu {
+      display: block;
+    }
+  }
 }
 
-.navbar-border {
-  width: 100%;
-  height: 1px;
-  margin: 0 auto;
+// hero styles / homes styles //
 
+.welcome { // home container
+  display: flex;
+  justify-content: center;
+  height: 96vh;
+  gap: 2rem;
+  margin: 0 auto;
   &.light {
-    border-bottom: 1px solid $lightTextColor;
+    background-color: $lightBackgroundColor;
+  }
+  // &.dark {
+  //   // background-color: $darkBackgroundColor;
+  // }
+
+  @include tablet {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+
+  @include mobile {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+  }
+}
+.hero-image { // profile image
+  background-image: url('../assets/image/profilepic2.png');
+  background-size: cover;
+  background-position: center;
+  width: 300px;
+  height: 300px;
+  margin-top: 10rem;
+  object-fit: cover;  
+
+  @include tablet {
+    width: 250px;
+    height: 250px;
+    margin-top: 6rem;
+  }
+
+  @include mobile {
+    width: 200px;
+    height: 200px;
+    margin-top: 5rem;
+  }
+} 
+.about-me { // about me container
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 450px;
+  height: 300px;
+  margin-top: 10rem;
+  text-align: justify;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  &.light {
+    color: $lightTextColor;
   }
   &.dark {
-    border-bottom: 1px solid $darkTextColor;  
+    color: $darkTextColor;
+  }
+  h1 {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+  }
+  h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+  }
+  p {
+    font-size: 1.2rem;
+    text-align: justify;
+    margin-bottom: 1rem;
+  }
+
+  @include tablet {
+    width: 90%;
+    height: auto;
+    margin-top: 2rem;
+    padding: 1rem;
+  }
+
+  @include mobile {
+    width: 95%;
+    height: auto;
+    margin-top: 1rem;
+    padding: 0.5rem;
+
+    h1 {
+      font-size: 1.5rem;
+    }
+    h3 {
+      font-size: 1.2rem;
+    }
+    p {
+      font-size: 1rem;
+    }
   }
 }
+
+
+// footer styles and icons styles //
+
 footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 4rem;
+  height: 3rem;
   width: 100%;
   padding: 0 1rem;
   p {
     font-family: 'Inter', sans-serif;
-    margin: 0 auto;
     font-size: 0.8rem;
   }
-  &.light {
-    @include themeStyles($lightBackgroundColor, $lightTextColor);
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.4rem;
+    a:first-child {
+      border-right: 1px solid $lightTextColor;
+      padding-right: 1rem;
+    }
+    a:nth-child(2) {
+      border-right: 1px solid $lightTextColor;
+      padding-right: 1rem;
+    }
+    a:nth-child(3) {
+      border-right: 1px solid $lightTextColor;
+      padding-right: 1rem;
+    }
   }
-
+  &.light { 
+    @include themeStyles($lightBackgroundColor, $lightTextColor);
+    border-top: 1px solid $lightTextColor;
+  }
   &.dark {
     @include themeStyles($darkBackgroundColor, $darkTextColor);
-  }
-}
-.footer-border {
-  width: 100%;
-  height: 1px;
-  margin: 0 auto;
-
-  &.light {
-    border-bottom: 1px solid $lightTextColor;
-  }
-  &.dark {
-    border-bottom: 1px solid $darkTextColor;  
+    border-top: 1px solid $darkTextColor;
   }
 
+  @include mobile {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 0.5rem;
+
+    .icons {
+      gap: 1rem;
+      
+      a:first-child,
+      a:nth-child(2),
+      a:nth-child(3) {
+        padding-right: 0.5rem;
+      }
+    }
+  }
 }
+
+// projects styles //
+
+// background gradient project still looks bad T.T //
+body {
+  background: linear-gradient(
+    135deg,
+    $cyberpunk-dark 0%,
+    $cyberpunk-primary 50%,
+    $cyberpunk-secondary 100%
+  );
+  min-height: 100vh;
+  margin: 0;
+  animation: gradientShift 15s ease infinite;
+  background-size: 400% 400%;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+

@@ -1,6 +1,6 @@
 import { Link } from "react-router";
-import { useTheme } from "../hooks/useTheme";
-
+import { useTheme } from "../contexts/ThemeContext";
+import { FaBars } from "react-icons/fa";
 export function Navbar() {
   // useTheme é um hook que retorna o tema atual e a função para alternar o tema
   const { theme, toggleTheme } = useTheme();
@@ -23,30 +23,34 @@ export function Navbar() {
     </svg>
   }
 
-  return (
-    <>
+  return (    
       <nav className={`navbar ${theme}`}>
         <div className={`titles ${theme}`}>
           <h1>Brunno Mota</h1>
-          <h3>Frontend Developer</h3>
+          <h3>Developer</h3>
         </div>
         <ul className={`navbarlinks ${theme}`}>
           <li>
-            <Link to="/">Inicio</Link>
+            <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/about">Sobre</Link>
+            <Link to="/about">About</Link>
           </li>
           <li>
-            <Link to="/contact">Contato</Link>
+            <Link to="/contact">Contact</Link>
+          </li>
+          <li>
+            <Link to="/projects">Projects</Link>
+          </li>
+          <li>
+            <Link to="/blog">Blog</Link>
           </li>
           <li>
             <button className={`theme-button ${theme}`} onClick={toggleTheme}>{theme === 'dark' ? resourses.dark : resourses.light}</button>
           </li>
         </ul>
+        <div className="mobile-menu"><FaBars /></div>
       </nav>
-      <div className={`navbar-border ${theme}`}></div>    
-    </>
   );
 }
 
