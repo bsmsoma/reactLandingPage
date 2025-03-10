@@ -6,6 +6,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { Navbar } from "./components/navbar";
+import { Footer } from "./components/footer";
 
 import type { Route } from "./+types/root";
 import "./styles/app.scss";
@@ -35,7 +37,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
       </head>
       <body>
         <ThemeProvider>
+          <Navbar />
           {children}
+          <Footer />
         </ThemeProvider>
         <ScrollRestoration />
         <Scripts />

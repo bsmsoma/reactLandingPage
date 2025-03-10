@@ -140,7 +140,7 @@ $darkSecondaryColor: #b967ff; // Purple
 .welcome { // home container
   display: flex;
   justify-content: center;
-  height: 96vh;
+  height: 94vh;
   gap: 2rem;
   margin: 0 auto;
   &.light {
@@ -324,6 +324,93 @@ body {
   }
   100% {
     background-position: 0% 50%;
+  }
+}
+
+// Projects styles
+.projects-container {
+  padding: 6rem 2rem 2rem;
+  min-height: 100vh;
+
+  &.light {
+    @include themeStyles($lightBackgroundColor, $lightTextColor);
+  }
+
+  &.dark {
+    @include themeStyles($darkBackgroundColor, $darkTextColor);
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &.light {
+    color: $lightTextColor;
+    background: rgba($lightBackgroundColor, 0.8);
+    border-color: $lightNeutralColor;
+  }
+
+  &.dark {
+    color: $darkTextColor;
+    background: rgba($darkBackgroundColor, 0.8);
+    border-color: rgba($darkTextColor, 0.3);
+  }
+
+  h3 {
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .tech-stack {
+    display: flex;
+    gap: 1rem;
+    font-size: 1.5rem;
+
+    svg {
+      transition: transform 0.2s ease;
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+@include mobile {
+  .bento-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .project-card {
+    padding: 1rem;
   }
 }
 
