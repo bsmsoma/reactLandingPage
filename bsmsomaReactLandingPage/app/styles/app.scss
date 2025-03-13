@@ -50,6 +50,7 @@ $darkSecondaryColor: #b967ff; // Purple
   align-items: center;
   height: 4rem;
   width: 100%;
+  z-index: 1;
 
   &.light {
     @include themeStyles($lightBackgroundColor, $lightTextColor);
@@ -355,7 +356,7 @@ footer {
     padding: 1rem;
 
     .project-card {
-      height: 400px;
+      height: 365px;
       background: rgba(255, 255, 255, 0.1);
       backdrop-filter: blur(10px);
       border-radius: 1rem;
@@ -365,12 +366,13 @@ footer {
 
       &:hover {
         transform: translateY(-5px);
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
       }
 
       &.light {
         color: $lightTextColor;
         background: rgba($lightBackgroundColor, 0.8);
-        border-color: $lightNeutralColor;
+        border-color: $lightTextColor;
       }
 
       &.dark {
@@ -379,17 +381,30 @@ footer {
         border-color: rgba($darkTextColor, 0.3);
       }
       img {
-        width: 90%;
-        height: 40%;
+        display: block;
+        width: 100%;
+        height: 150px;
         object-fit: cover;
         border-radius: 0.5rem;
+        margin: 0 auto 0.5rem;
       }
-      h3 {
+      .project-title {
         font-family: 'Inter', sans-serif;
-        margin-bottom: 1rem;
+        margin-bottom: 0.5rem;
+        a {
+          color: inherit;
+          text-decoration: none;
+          
+          &:hover {
+            text-decoration: underline;
+          }
+        }
       }
-
-      p {
+      .project-type {
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 0.5rem;
+      }
+      .project-description {
         font-family: 'Inter', sans-serif;
         margin-bottom: 1rem;
         font-size: 0.9rem;

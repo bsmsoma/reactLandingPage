@@ -14,30 +14,42 @@ import {
 } from "react-icons/si";
 import rmcImage from "../assets/image/exemplosite.png" //temporario
 import joaoVitorImage from "../assets/image/exemplosite2.png" //temporario
+import bridalStoreImage from "../assets/image/requintetemp.png" //temporario
 
 //todo: adicionar imagens dos projetos
 
 interface ProjectCardProps {
-    title: string;
+    title: {
+        name: string;
+        url?: string; // URL opcional
+    };
     type: string;
     description: string;
     technologies: JSX.Element[];
-    link: string;
+    techTitle: string[];
     image: string;
 }
 
-const ProjectCard = ({ title, type, description, technologies, link, image }: ProjectCardProps) => {
+const ProjectCard = ({ title, type, description, technologies, techTitle, image }: ProjectCardProps) => {
     const { theme } = useTheme();
     
     return (
         <div className={`project-card ${theme}`}>
-            <img src={image} alt={`preview do projeto ${title}`} />
-            <h3>{title}</h3>
-            <h4>{type}</h4>
-            <p>{description}</p>
+            <img src={image} alt={`preview do projeto ${title.name}`} />
+            <h3 className="project-title">
+                {title.url ? (
+                    <a href={title.url} target="_blank" rel="noopener noreferrer">
+                        {title.name}
+                    </a>
+                ) : (
+                    title.name
+                )}
+            </h3>
+            <h4 className="project-type">{type}</h4>
+            <p className="project-description">{description}</p>
             <div className="tech-stack">
                 {technologies.map((tech, index) => (
-                    <span key={index}>{tech}</span>
+                    <span key={index}><i title={techTitle[index]}>{tech}</i></span>
                 ))}
             </div>
         </div>
@@ -59,34 +71,44 @@ export default function Projects() {
 
     const projectsData = [
         {
-            title: "Requinte - Locação de Trajes",
+            title: {
+                name: "Requinte - Locação de Trajes",
+                url: "https://github.com/bsmsoma/bridalstore"
+            },
             type: "Catalogo Virtual",
-            description: "Catalogo virtual de trajes para locação, desenvolvido com React, React Router, Sass, Firebase",
+            description: "Catalogo virtual de trajes para locação, Visando melhorar a experiencia do cliente na busca por um traje, foi desenvolvido um catalogo virtual com um design moderno e responsivo.",
             technologies: [<SiReact />, <SiSass />, <SiFirebase />, <SiReactrouter />],
-            link: "https://github.com/seu-usuario/projeto1",
+            techTitle: ["React", "Sass", "Firebase", "React Router"],
+            image: bridalStoreImage
         },
         {
-            title: "RMC Maquinas",
+            title: {
+                name: "RMC Maquinas",
+                url: "https://rafaelmaquinas.netlify.app/"
+            },
             type: "Institucional",
             description: "Site institucional otimizado para SEO, desenvolvido com foco em conversão para atrair clientes locais e de outras regiões.",
             technologies: [<SiHtml5 />, <SiCss3 />, <SiJavascript />],
-            link: "https://github.com/seu-usuario/projeto1",
+            techTitle: ["HTML", "CSS", "Javascript"],
             image: rmcImage
         },
         {
-            title: "João Vitor - Fotografia",
+            title: {
+                name: "João Vitor - Fotografia",
+                url: "https://projetofotocriativa.netlify.app/"
+            },
             type: "Landing Page",
-            description: "Loja virtual com integração ao Firebase",
-            technologies: [<SiReact />, <SiTailwindcss />, <SiReactrouter />],
-            link: "https://github.com/seu-usuario/projeto2",
+            description: "Landing page desenvolvida para destacar o portfólio de um fotógrafo, com um design moderno, responsivo e focado na melhor experiência do usuário",
+            technologies: [<SiReact />, <SiTypescript />, <SiTailwindcss />, <SiReactrouter />],
+            techTitle: ["React", "Typescript", "Tailwindcss", "React Router V7"],
             image: joaoVitorImage
         },
-        // Adicione mais projetos conforme necessário
+        // Adicionar mais projetos GOGOGO!
     ];
 
     return (
         <section className={`projects-container ${theme}`}>
-            <h1>Projetos</h1>
+            <h1>Projects</h1>
             <div className="bento-grid">
                 {projectsData.map((project, index) => (
                     <ProjectCard key={index} {...project} />
