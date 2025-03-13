@@ -3,10 +3,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-// Cyberpunk theme colors
-$cyberpunk-primary: #ff0055;    // Neon pink
-$cyberpunk-secondary: #041616;  // Cyan
-$cyberpunk-dark: #0a0b14;      // Darker background for better readability
 
 // light mode
 $lightTextColor: #2d3436; // Charcoal gray for text
@@ -35,6 +31,10 @@ $darkSecondaryColor: #b967ff; // Purple
 }
 
 @mixin mobile {
+
+  /* Define um breakpoint para dispositivos móveis com largura máxima de 480px 
+  ou seja até 480px de largura vao ser aplicadas as styles de mobile, depois de 
+  480px de largura vao ser aplicadas as styles de tablet */
   @media (max-width: 480px) {
     @content;
   }
@@ -53,7 +53,7 @@ $darkSecondaryColor: #b967ff; // Purple
 
   &.light {
     @include themeStyles($lightBackgroundColor, $lightTextColor);
-    border-bottom: 1px solid $lightTextColor; 
+    border-bottom: 1px solid $lightTextColor;
   }
 
   &.dark {
@@ -66,8 +66,9 @@ $darkSecondaryColor: #b967ff; // Purple
     align-items: center;
     gap: 0.5rem;
     font-family: 'Inter', sans-serif;
+
     h3 {
-      margin-top: 0.3rem;  
+      margin-top: 0.3rem;
     }
   }
 
@@ -81,6 +82,7 @@ $darkSecondaryColor: #b967ff; // Purple
       text-decoration: none;
       font-family: 'Inter', sans-serif;
       padding: 0.5rem;
+
       &:visited,
       &:active,
       &:link {
@@ -117,38 +119,45 @@ $darkSecondaryColor: #b967ff; // Purple
 
     }
   }
+
   .mobile-menu {
     display: none;
     cursor: pointer;
-    font-size: 1.5rem;
+    font-size: 2rem;
+
   }
+
   @include mobile {
-    padding: 0.5rem;
+    padding: 1rem;
     height: 3.5rem;
 
     .navbarlinks {
       display: none; // Will be replaced with a mobile menu
     }
+
     .mobile-menu {
       display: block;
     }
   }
 }
 
-// hero styles / homes styles //
+// hero styles / home styles //
 
-.welcome { // home container
+.welcome {
+  // home container
   display: flex;
   justify-content: center;
   height: 94vh;
-  gap: 2rem;
+  gap: 3rem;
   margin: 0 auto;
+
   &.light {
     background-color: $lightBackgroundColor;
   }
-  // &.dark {
-  //   // background-color: $darkBackgroundColor;
-  // }
+
+  &.dark {
+    background-color: $darkBackgroundColor;
+  }
 
   @include tablet {
     flex-direction: column;
@@ -164,28 +173,35 @@ $darkSecondaryColor: #b967ff; // Purple
     padding: 0 1rem;
   }
 }
-.hero-image { // profile image
-  background-image: url('../assets/image/profilepic2.png');
+
+.hero-image {
+  // profile image
+  background-image: url('../assets/image/profile.jpeg');
   background-size: cover;
   background-position: center;
   width: 300px;
   height: 300px;
   margin-top: 10rem;
-  object-fit: cover;  
+  object-fit: cover;
+  border-radius: 50%;
 
   @include tablet {
     width: 250px;
-    height: 250px;
+    height: 450px;
     margin-top: 6rem;
   }
 
   @include mobile {
-    width: 200px;
-    height: 200px;
-    margin-top: 5rem;
+    width: 90%;
+    height: 400px;
+    margin-top: 4rem;
+    border-radius: 0.5rem;
+    background-position: 0 25%;
   }
-} 
-.about-me { // about me container
+}
+
+.about-me {
+  // about me container
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -195,20 +211,25 @@ $darkSecondaryColor: #b967ff; // Purple
   text-align: justify;
   font-family: 'Inter', sans-serif;
   font-size: 1.2rem;
+
   &.light {
     color: $lightTextColor;
   }
+
   &.dark {
     color: $darkTextColor;
   }
+
   h1 {
     margin-bottom: 0.5rem;
     font-size: 2rem;
   }
+
   h3 {
     margin-bottom: 0.5rem;
     font-size: 1.5rem;
   }
+
   p {
     font-size: 1.2rem;
     text-align: justify;
@@ -231,9 +252,11 @@ $darkSecondaryColor: #b967ff; // Purple
     h1 {
       font-size: 1.5rem;
     }
+
     h3 {
       font-size: 1.2rem;
     }
+
     p {
       font-size: 1rem;
     }
@@ -250,32 +273,39 @@ footer {
   height: 3rem;
   width: 100%;
   padding: 0 1rem;
+
   p {
     font-family: 'Inter', sans-serif;
     font-size: 0.8rem;
   }
+
   .icons {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1.4rem;
+
     a:first-child {
       border-right: 1px solid $lightTextColor;
       padding-right: 1rem;
     }
+
     a:nth-child(2) {
       border-right: 1px solid $lightTextColor;
       padding-right: 1rem;
     }
+
     a:nth-child(3) {
       border-right: 1px solid $lightTextColor;
       padding-right: 1rem;
     }
   }
-  &.light { 
+
+  &.light {
     @include themeStyles($lightBackgroundColor, $lightTextColor);
     border-top: 1px solid $lightTextColor;
   }
+
   &.dark {
     @include themeStyles($darkBackgroundColor, $darkTextColor);
     border-top: 1px solid $darkTextColor;
@@ -289,45 +319,17 @@ footer {
 
     .icons {
       gap: 1rem;
-      
+
       a:first-child,
       a:nth-child(2),
       a:nth-child(3) {
-        padding-right: 0.5rem;
+        padding-right: 1rem;
       }
     }
   }
 }
 
-// projects styles //
-
-// background gradient project still looks bad T.T //
-body {
-  background: linear-gradient(
-    135deg,
-    $cyberpunk-dark 0%,
-    $cyberpunk-primary 50%,
-    $cyberpunk-secondary 100%
-  );
-  min-height: 100vh;
-  margin: 0;
-  animation: gradientShift 15s ease infinite;
-  background-size: 400% 400%;
-}
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-// Projects styles
+// /projects styles //
 .projects-container {
   padding: 6rem 2rem 2rem;
   min-height: 100vh;
@@ -345,72 +347,79 @@ body {
     margin-bottom: 2rem;
     font-family: 'Inter', sans-serif;
   }
-}
 
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 1.5rem;
-  padding: 1rem;
-}
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
 
-.project-card {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border-radius: 1rem;
-  padding: 1.5rem;
-  transition: transform 0.3s ease;
-  text-decoration: none;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+    .project-card {
+      height: 400px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 1rem;
+      padding: 1rem;
+      transition: transform 0.3s ease;
+      border: 1px solid rgba(255, 255, 255, 0.2);
 
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  &.light {
-    color: $lightTextColor;
-    background: rgba($lightBackgroundColor, 0.8);
-    border-color: $lightNeutralColor;
-  }
-
-  &.dark {
-    color: $darkTextColor;
-    background: rgba($darkBackgroundColor, 0.8);
-    border-color: rgba($darkTextColor, 0.3);
-  }
-
-  h3 {
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 1rem;
-  }
-
-  p {
-    font-family: 'Inter', sans-serif;
-    margin-bottom: 1rem;
-    font-size: 0.9rem;
-  }
-
-  .tech-stack {
-    display: flex;
-    gap: 1rem;
-    font-size: 1.5rem;
-
-    svg {
-      transition: transform 0.2s ease;
       &:hover {
-        transform: scale(1.2);
+        transform: translateY(-5px);
+      }
+
+      &.light {
+        color: $lightTextColor;
+        background: rgba($lightBackgroundColor, 0.8);
+        border-color: $lightNeutralColor;
+      }
+
+      &.dark {
+        color: $darkTextColor;
+        background: rgba($darkBackgroundColor, 0.8);
+        border-color: rgba($darkTextColor, 0.3);
+      }
+      img {
+        width: 90%;
+        height: 40%;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+      h3 {
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 1rem;
+      }
+
+      p {
+        font-family: 'Inter', sans-serif;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+      }
+
+      .tech-stack {
+        display: flex;
+        gap: 1rem;
+        font-size: 1.5rem;
+
+        svg {
+          transition: transform 0.2s ease;
+
+          &:hover {
+            transform: scale(1.2);
+          }
+        }
       }
     }
   }
 }
 
+
+
 @include mobile {
   .bento-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .project-card {
     padding: 1rem;
   }
 }
-
