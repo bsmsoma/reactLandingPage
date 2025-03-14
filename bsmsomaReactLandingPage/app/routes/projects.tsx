@@ -1,4 +1,5 @@
 import type { Route } from "./+types/projects";
+import type { IconType } from "react-icons";
 import { useTheme } from "../contexts/ThemeContext";
 import { 
     SiReact, 
@@ -25,7 +26,7 @@ interface ProjectCardProps {
     };
     type: string;
     description: string;
-    technologies: JSX.Element[];
+    technologies: IconType[];
     techTitle: string[];
     image: string;
 }
@@ -48,8 +49,8 @@ const ProjectCard = ({ title, type, description, technologies, techTitle, image 
             <h4 className="project-type">{type}</h4>
             <p className="project-description">{description}</p>
             <div className="tech-stack">
-                {technologies.map((tech, index) => (
-                    <span key={index}><i title={techTitle[index]}>{tech}</i></span>
+                {technologies.map((Icon, index) => (
+                    <span key={index}><i title={techTitle[index]}>{<Icon />}</i></span>
                 ))}
             </div>
         </div>
@@ -68,7 +69,7 @@ export function meta({ }: Route.MetaArgs) {
 
 export default function Projects() {
     const { theme } = useTheme();
-
+    
     const projectsData = [
         {
             title: {
@@ -77,7 +78,7 @@ export default function Projects() {
             },
             type: "Catalogo Virtual",
             description: "Catalogo virtual de trajes para locação, Visando melhorar a experiencia do cliente na busca por um traje, foi desenvolvido um catalogo virtual com um design moderno e responsivo.",
-            technologies: [<SiReact />, <SiSass />, <SiFirebase />, <SiReactrouter />],
+            technologies: [SiReact, SiSass, SiFirebase, SiReactrouter],
             techTitle: ["React", "Sass", "Firebase", "React Router"],
             image: bridalStoreImage
         },
@@ -88,7 +89,7 @@ export default function Projects() {
             },
             type: "Institucional",
             description: "Site institucional otimizado para SEO, desenvolvido com foco em conversão para atrair clientes locais e de outras regiões.",
-            technologies: [<SiHtml5 />, <SiCss3 />, <SiJavascript />],
+            technologies: [SiHtml5, SiCss3, SiJavascript],
             techTitle: ["HTML", "CSS", "Javascript"],
             image: rmcImage
         },
@@ -99,7 +100,7 @@ export default function Projects() {
             },
             type: "Landing Page",
             description: "Landing page desenvolvida para destacar o portfólio de um fotógrafo, com um design moderno, responsivo e focado na melhor experiência do usuário",
-            technologies: [<SiReact />, <SiTypescript />, <SiTailwindcss />, <SiReactrouter />],
+            technologies: [SiReact, SiTypescript, SiTailwindcss, SiReactrouter],
             techTitle: ["React", "Typescript", "Tailwindcss", "React Router V7"],
             image: joaoVitorImage
         },

@@ -1,10 +1,10 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router";
 import { useTheme } from "../contexts/ThemeContext";
 import { FaBars } from "react-icons/fa";
 export function Navbar() {
   // useTheme é um hook que retorna o tema atual e a função para alternar o tema
   const { theme, toggleTheme } = useTheme();
-
+ 
   // resourses é um objeto que contém os ícones para o tema claro e o tema escuro
   const resourses = {
     light: <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -31,16 +31,16 @@ export function Navbar() {
         </div>
         <ul className={`navbarlinks ${theme}`}>
           <li>
-            <Link to="/">Home</Link>
+            <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/">Home</NavLink>
           </li>
           <li>
-            <Link to="/contact">Contact</Link>
+            <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/contact">Contact</NavLink>
           </li>
           <li>
-            <Link to="/projects">Projects</Link>
+              <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/projects">Projects</NavLink>
           </li>
           <li>
-            <Link to="/blog">Blog</Link>
+            <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/blog">Blog</NavLink>
           </li>
           <li>
             <button className={`theme-button ${theme}`} onClick={toggleTheme}>{theme === 'dark' ? resourses.dark : resourses.light}</button>
