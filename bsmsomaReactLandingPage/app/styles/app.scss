@@ -216,9 +216,10 @@ $montserratFont: 'Montserrat', sans-serif;
   // home container
   display: flex;
   justify-content: center;
-  height: 94vh;
+  min-height: 95vh;
   gap: 3rem;
   margin: 0 auto;
+  padding: 2rem;
 
   &.light {
     background-color: $lightBackgroundColor;
@@ -432,6 +433,10 @@ footer {
     gap: 1.5rem;
     padding: 1rem;
 
+    @include mobile {
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      padding: 0.5rem;
+    }
     .project-card {
       height: auto;
       min-height: 385px;
@@ -444,11 +449,6 @@ footer {
       padding: 1rem;
       transition: transform 0.3s ease;
       font-family: $montserratFont;
-
-      .project-type {
-        font-family: 'Inter', sans-serif;
-        font-size: 0.8rem;
-      }
       
       &:hover {
         transform: translateY(-5px);
@@ -530,15 +530,17 @@ footer {
         margin: 0 auto 0.5rem;
       }
       .project-title {
-        font-size: 1.4rem;
+        
         font-weight: 600;
         margin-bottom: 0.5rem;
       }
       .project-type {
-        font-size: 1.1rem;
         font-weight: 500;
         margin-bottom: 0.5rem;
+        font-family: 'Inter', sans-serif;
+        font-size: 0.9rem;
       }
+      
       .project-description {
         font-size: 0.9rem;
         line-height: 1.5;
@@ -561,18 +563,6 @@ footer {
         }
       }
     }
-  }
-}
-
-
-
-@include mobile {
-  .bento-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-card {
-    padding: 1rem;
   }
 }
 

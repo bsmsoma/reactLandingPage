@@ -16,6 +16,7 @@ import {
 import rmcImage from "../assets/image/exemplosite.png" //temporario
 import joaoVitorImage from "../assets/image/exemplosite2.png" //temporario
 import bridalStoreImage from "../assets/image/requintetemp.png" //temporario
+import sidneyImage from "../assets/image/sidneytemp.png" //temporario
 
 //todo: adicionar imagens dos projetos
 
@@ -73,38 +74,49 @@ export default function Projects() {
     const projectsData = [
         {
             title: {
-                name: "Requinte - Locação de Trajes",
+                name: "Requinte - Formal Wear Rental",
                 url: "https://requinte.netlify.app/" 
             },
-            type: "Catalogo Virtual",
-            description: "Catalogo virtual de trajes para locação, Visando melhorar a experiencia do cliente na busca por um traje, foi desenvolvido um catalogo virtual com um design moderno e responsivo.",
+            type: "Virtual Catalog",
+            description: "Virtual catalog for formal wear rental. Aiming to enhance the customer experience in searching for formal wear, a virtual catalog was developed with a modern and responsive design.",
             technologies: [SiReact, SiSass, SiFirebase, SiReactrouter],
             techTitle: ["React", "Sass", "Firebase", "React Router"],
             image: bridalStoreImage
         },
         {
             title: {
-                name: "RMC Maquinas",
+                name: "RMC Machines",
                 url: "https://rafaelmaquinas.netlify.app/"
             },
-            type: "Institucional",
-            description: "Site institucional otimizado para SEO, desenvolvido com foco em conversão para atrair clientes locais e de outras regiões.",
+            type: "Corporate Website",
+            description: "SEO-optimized corporate website, developed with a focus on conversion to attract both local and regional customers.",
             technologies: [SiHtml5, SiCss3, SiJavascript],
             techTitle: ["HTML", "CSS", "Javascript"],
             image: rmcImage
         },
         {
             title: {
-                name: "João Vitor - Fotografia",
+                name: "João Vitor - Photography",
                 url: "https://projetofotocriativa.netlify.app/"
             },
             type: "Landing Page",
-            description: "Landing page desenvolvida para destacar o portfólio de um fotógrafo, com um design moderno, responsivo e focado na melhor experiência do usuário",
+            description: "Landing page developed to showcase a photographer's portfolio, featuring a modern, responsive design focused on optimal user experience.",
             technologies: [SiReact, SiTypescript, SiTailwindcss, SiReactrouter],
             techTitle: ["React", "Typescript", "Tailwindcss", "React Router V7"],
             image: joaoVitorImage
         },
-        // Adicionar mais projetos GOGOGO!
+        {
+            title: {
+                name: "Sidney Resende",
+                url: "https://sidneyresende.netlify.app/"
+            },
+            type: "Landing Page",
+            description: "Landing page optimized for Google Ads and SEO, developed for a law firm. Focused on increasing lead conversion and improving positioning in paid and organic searches.",
+            technologies: [SiHtml5, SiCss3, SiJavascript],
+            techTitle: ["HTML", "CSS", "Javascript"],
+            image: sidneyImage
+        }
+        // Add more projects GOGOGO!
     ];
 
     return (
