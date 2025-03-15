@@ -74,7 +74,7 @@ export default function Projects() {
         {
             title: {
                 name: "Requinte - Locação de Trajes",
-                url: "https://github.com/bsmsoma/bridalstore"
+                url: "https://requinte.netlify.app/" 
             },
             type: "Catalogo Virtual",
             description: "Catalogo virtual de trajes para locação, Visando melhorar a experiencia do cliente na busca por um traje, foi desenvolvido um catalogo virtual com um design moderno e responsivo.",

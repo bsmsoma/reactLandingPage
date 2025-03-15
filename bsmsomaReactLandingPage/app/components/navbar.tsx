@@ -1,10 +1,13 @@
 import { NavLink } from "react-router";
 import { useTheme } from "../contexts/ThemeContext";
 import { FaBars } from "react-icons/fa";
+import { useState } from "react";
 export function Navbar() {
+  
   // useTheme é um hook que retorna o tema atual e a função para alternar o tema
   const { theme, toggleTheme } = useTheme();
- 
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   // resourses é um objeto que contém os ícones para o tema claro e o tema escuro
   const resourses = {
     light: <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -39,14 +42,34 @@ export function Navbar() {
           <li>
               <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/projects">Projects</NavLink>
           </li>
-          <li>
+          {/* <li>
             <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/blog">Blog</NavLink>
-          </li>
+          </li> */}
           <li>
             <button className={`theme-button ${theme}`} onClick={toggleTheme}>{theme === 'dark' ? resourses.dark : resourses.light}</button>
           </li>
         </ul>
-        <div className="mobile-menu"><FaBars /></div>
+        <div className="mobile-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <FaBars />
+        </div>
+        {isMenuOpen && (
+          <div className={`mobile-menu-content ${theme}`}>
+            <ul>
+              <li>
+                <NavLink to="/" onClick={() => setIsMenuOpen(false)}>Home</NavLink>
+              </li>
+              <li>
+                <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
+              </li>
+              <li>
+                <NavLink to="/projects" onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
+              </li>
+              <li>
+                <button className={`theme-button ${theme}`} onClick={toggleTheme}>{theme === 'dark' ? resourses.dark : resourses.light}</button>
+              </li>
+            </ul>
+          </div>
+        )}
       </nav>
   );
 }

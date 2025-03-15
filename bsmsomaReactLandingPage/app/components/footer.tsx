@@ -12,7 +12,7 @@ export function Footer() {
                     &copy; {currentYear} Brunno Mota. Todos os direitos reservados.
                 </p>
                 <div className={`icons ${theme}`}>
-                    <IconContext.Provider value={{ size: "1.5rem", color: theme === "dark" ? "#ff71ce" : "#000" }}>
+                    <IconContext.Provider value={{ size: "1.5rem", color: theme === "dark" ? "white" : "#000" }}>
                     <Link to="https://www.linkedin.com/in/brunno-mota-bb0184269/" target="_blank" rel="noopener noreferrer">
                         <FaLinkedin />
                     </Link>
