@@ -97,7 +97,7 @@ export default function Projects() {
         {
             title: {
                 name: "João Vitor - Photography",
-                url: "https://projetofotocriativa.netlify.app/"
+                url: "https://joaovitorfotografo.netlify.app/"
             },
             type: "Landing Page",
             description: "Landing page developed to showcase a photographer's portfolio, featuring a modern, responsive design focused on optimal user experience.",
