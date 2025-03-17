@@ -19,7 +19,7 @@ export function Footer() {
                     <Link to="https://github.com/bsmsoma" target="_blank" rel="noopener noreferrer">
                         <FaGithub />
                     </Link>
-                    <Link to="https://www.instagram.com/brunno_mota/" target="_blank" rel="noopener noreferrer">
+                    <Link to="https://www.instagram.com/bsmsoma/" target="_blank" rel="noopener noreferrer">
                         <FaInstagram />
                     </Link>
                     <Link to="https://wa.me/5563992565050" target="_blank" rel="noopener noreferrer">
