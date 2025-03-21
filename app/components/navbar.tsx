@@ -1,14 +1,15 @@
+import { useState } from "react";
 import { NavLink } from "react-router";
 import { useTheme } from "../contexts/ThemeContext";
 import { useLanguage } from "../contexts/LanguageContext";
 import { FaBars } from "react-icons/fa";
-import { useState } from "react";
+import { Space, Switch } from 'antd';
 
 export function Navbar() {
-  
+
   // useTheme é um hook que retorna o tema atual e a função para alternar o tema
   const { theme, toggleTheme } = useTheme();
-  const { language } = useLanguage();
+  const { language, setLanguage } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   // resourses é um objeto que contém os ícones para o tema claro e o tema escuro
   const resourses = {
@@ -53,6 +54,14 @@ export function Navbar() {
         <h3>{textTranslations.subtitle[language as keyof typeof textTranslations.subtitle]}</h3>
       </div>
       <ul className={`navbarlinks ${theme}`}>
+        <Space direction="vertical">
+          <Switch
+            checkedChildren={language.toUpperCase()}
+            unCheckedChildren={language.toUpperCase()}
+            size="small"
+            onChange={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
+          />
+        </Space>
         <li>
           <NavLink className={({ isActive }) => isActive ? `active ${theme}` : ''} to="/">
             {textTranslations.home[language as keyof typeof textTranslations.home]}
@@ -75,8 +84,20 @@ export function Navbar() {
           <button className={`theme-button ${theme}`} onClick={toggleTheme}>{theme === 'dark' ? resourses.dark : resourses.light}</button>
         </li>
       </ul>
-      <div className="mobile-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        <FaBars />
+      <div className="mobile-menu-container">
+        <Space direction="vertical" className="languageswitch">
+          <Switch
+            className={`language-switch ${theme}`}
+            checkedChildren={language.toUpperCase()}
+            unCheckedChildren={language.toUpperCase()}
+            defaultChecked
+            size="small"
+            onChange={() => setLanguage(language === 'pt' ? 'en' : 'pt')}
+          />
+        </Space>
+        <div className="mobile-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <FaBars />
+        </div>
       </div>
       {isMenuOpen && (
         <div className={`mobile-menu-content ${theme}`}>

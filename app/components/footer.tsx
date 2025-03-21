@@ -10,14 +10,14 @@ export function Footer() {
     const { language } = useLanguage();
     const textTranslations = {
         footer: {
-            en: "© 2025 Brunno Mota. All rights reserved.",
-            pt: "© 2025 Brunno Mota. Todos os direitos reservados.",
+            en: "Brunno Mota. All rights reserved.",
+            pt: "Brunno Mota. Todos os direitos reservados.",
         },
     };
     return (
             <footer className={`footer ${theme}`}>
                 <p>
-                    {`${currentYear} ${textTranslations.footer[language as keyof typeof textTranslations.footer]}`}
+                    {`© ${currentYear} ${textTranslations.footer[language as keyof typeof textTranslations.footer]}`}
                 </p>
                 <div className={`icons ${theme}`}>
                     <IconContext.Provider value={{ size: "1.5rem", color: theme === "dark" ? "white" : "#000" }}>
