@@ -1,13 +1,15 @@
 import { NavLink } from "react-router";
 import { useTheme } from "../contexts/ThemeContext";
+import { useLanguage } from "../contexts/LanguageContext";
 import { FaBars } from "react-icons/fa";
 import { useState } from "react";
+
 export function Navbar() {
   
   // useTheme é um hook que retorna o tema atual e a função para alternar o tema
   const { theme, toggleTheme } = useTheme();
+  const { language } = useLanguage();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
   // resourses é um objeto que contém os ícones para o tema claro e o tema escuro
   const resourses = {
     light: <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -26,51 +28,81 @@ export function Navbar() {
     </svg>
   }
 
-  return (    
-      <nav className={`navbar ${theme}`}>
-        <div className={`titles ${theme}`}>
-          <h1>Brunno Mota</h1>
-          <h3>Developer</h3>
-        </div>
-        <ul className={`navbarlinks ${theme}`}>
-          <li>
-            <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/">Home</NavLink>
-          </li>
-          <li>
-            <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/contact">Contact</NavLink>
-          </li>
-          <li>
-              <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/projects">Projects</NavLink>
-          </li>
-          {/* <li>
+  const textTranslations = {
+    subtitle: {
+      en: "Developer",
+      pt: "Desenvolvedor",
+    },
+    home: {
+      en: "Home",
+      pt: "Início",
+    },
+    contact: {
+      en: "Contact",
+      pt: "Contato",
+    },
+    projects: {
+      en: "Projects",
+      pt: "Projetos",
+    },
+  }
+  return (
+    <nav className={`navbar ${theme}`}>
+      <div className={`titles ${theme}`}>
+        <h1>Brunno Mota</h1>
+        <h3>{textTranslations.subtitle[language as keyof typeof textTranslations.subtitle]}</h3>
+      </div>
+      <ul className={`navbarlinks ${theme}`}>
+        <li>
+          <NavLink className={({ isActive }) => isActive ? `active ${theme}` : ''} to="/">
+            {textTranslations.home[language as keyof typeof textTranslations.home]}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className={({ isActive }) => isActive ? `active ${theme}` : ''} to="/contact">
+            {textTranslations.contact[language as keyof typeof textTranslations.contact]}
+          </NavLink>
+        </li>
+        <li>
+          <NavLink className={({ isActive }) => isActive ? `active ${theme}` : ''} to="/projects">
+            {textTranslations.projects[language as keyof typeof textTranslations.projects]}
+          </NavLink>
+        </li>
+        {/* <li>
             <NavLink className={({isActive}) => isActive ? `active ${theme}` : ''} to="/blog">Blog</NavLink>
           </li> */}
-          <li>
-            <button className={`theme-button ${theme}`} onClick={toggleTheme}>{theme === 'dark' ? resourses.dark : resourses.light}</button>
-          </li>
-        </ul>
-        <div className="mobile-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-          <FaBars />
+        <li>
+          <button className={`theme-button ${theme}`} onClick={toggleTheme}>{theme === 'dark' ? resourses.dark : resourses.light}</button>
+        </li>
+      </ul>
+      <div className="mobile-menu" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+        <FaBars />
+      </div>
+      {isMenuOpen && (
+        <div className={`mobile-menu-content ${theme}`}>
+          <ul>
+            <li>
+              <NavLink to="/" onClick={() => setIsMenuOpen(false)}>
+                {textTranslations.home[language as keyof typeof textTranslations.home]}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>
+                {textTranslations.contact[language as keyof typeof textTranslations.contact]}
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to="/projects" onClick={() => setIsMenuOpen(false)}>
+                {textTranslations.projects[language as keyof typeof textTranslations.projects]}
+              </NavLink>
+            </li>
+            <li>
+              <button className={`theme-button ${theme}`} onClick={toggleTheme}>{theme === 'dark' ? resourses.dark : resourses.light}</button>
+            </li>
+          </ul>
         </div>
-        {isMenuOpen && (
-          <div className={`mobile-menu-content ${theme}`}>
-            <ul>
-              <li>
-                <NavLink to="/" onClick={() => setIsMenuOpen(false)}>Home</NavLink>
-              </li>
-              <li>
-                <NavLink to="/contact" onClick={() => setIsMenuOpen(false)}>Contact</NavLink>
-              </li>
-              <li>
-                <NavLink to="/projects" onClick={() => setIsMenuOpen(false)}>Projects</NavLink>
-              </li>
-              <li>
-                <button className={`theme-button ${theme}`} onClick={toggleTheme}>{theme === 'dark' ? resourses.dark : resourses.light}</button>
-              </li>
-            </ul>
-          </div>
-        )}
-      </nav>
+      )}
+    </nav>
   );
 }
 

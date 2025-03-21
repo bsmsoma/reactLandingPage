@@ -2,14 +2,22 @@ import { Link } from "react-router";
 import { useTheme } from "../contexts/ThemeContext";
 import { FaLinkedin, FaGithub, FaInstagram, FaWhatsapp } from "react-icons/fa";
 import { IconContext } from "react-icons";  
+import { useLanguage } from "~/contexts/LanguageContext";
 
 export function Footer() {
     const {theme} = useTheme();
     const currentYear = new Date().getFullYear();
+    const { language } = useLanguage();
+    const textTranslations = {
+        footer: {
+            en: "© 2025 Brunno Mota. All rights reserved.",
+            pt: "© 2025 Brunno Mota. Todos os direitos reservados.",
+        },
+    };
     return (
             <footer className={`footer ${theme}`}>
                 <p>
-                    &copy; {currentYear} Brunno Mota. Todos os direitos reservados.
+                    {`${currentYear} ${textTranslations.footer[language as keyof typeof textTranslations.footer]}`}
                 </p>
                 <div className={`icons ${theme}`}>
                     <IconContext.Provider value={{ size: "1.5rem", color: theme === "dark" ? "white" : "#000" }}>
