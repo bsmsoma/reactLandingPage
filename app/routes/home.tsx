@@ -24,7 +24,7 @@ export default function Hero() {
         },
         aboutMeIntro: {
             en: (<>I have a degree in Database Technology from Senac - Santo Amaro and a strong passion for software development. Currently, I am enhancing my skills in <b>JavaScript, TypeScript, React, Node.js, and SQL</b>, aiming to become a well-rounded full-stack developer. </>),
-            pt: (<>Tenho um diploma em Tecnologia de Banco de Dados do Senac - Santo Amaro e uma paixão forte pelo desenvolvimento de software. Atualmente, estou aprimorando minhas habilidades em <b>JavaScript, TypeScript, React, Node.js, e SQL</b>, visando me tornar um desenvolvedor full-stack completo.</>),
+            pt: (<>Formado em Tecnologia de Banco de Dados do Senac - Santo Amaro e com uma paixão forte pelo desenvolvimento de software. Atualmente, estou aprimorando minhas habilidades em <b>JavaScript, TypeScript, React, Node.js, e SQL</b>, visando me tornar um desenvolvedor full-stack completo.</>),
         },
         aboutmeSecondParagraph: {
             en: "I have experience building applications that integrate dynamic front-end interfaces, robust APIs, and efficient database management. My focus is on developing scalable, high-performance, and user-friendly solutions while continuously learning and improving my technical expertise.",

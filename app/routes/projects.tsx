@@ -93,26 +93,26 @@ export default function Projects() {
     };
 
     const projectsData = [
-        {
-            title: {
-                name: {
-                    en: "Requinte - Formal Wear Rental",
-                    pt: "Requinte - Aluguel de Vestidos de Casamento"
-                },
-                url: "https://requinte.netlify.app/"
-            },
-            type: {
-                en: "Virtual Catalog",
-                pt: "Catálogo Virtual"
-            },
-            description: {
-                en: "Virtual catalog for formal wear rental. Aiming to enhance the customer experience in searching for formal wear, a virtual catalog was developed with a modern and responsive design.",
-                pt: "Catálogo virtual para aluguel de vestidos de casamento. Buscando melhorar a experiência do cliente na busca por vestidos de casamento, foi desenvolvido um catálogo virtual com um design moderno e responsivo."
-            },
-            technologies: [SiReact, SiSass, SiFirebase, SiReactrouter],
-            techTitle: ["React", "Sass", "Firebase", "React Router"],
-            image: bridalStoreImage
-        },
+        // {
+        //     title: {
+        //         name: {
+        //             en: "Requinte - Formal Wear Rental",
+        //             pt: "Requinte - Aluguel de Vestidos de Casamento"
+        //         },
+        //         url: "https://requinte.netlify.app/"
+        //     },
+        //     type: {
+        //         en: "Virtual Catalog",
+        //         pt: "Catálogo Virtual"
+        //     },
+        //     description: {
+        //         en: "Virtual catalog for formal wear rental. Aiming to enhance the customer experience in searching for formal wear, a virtual catalog was developed with a modern and responsive design.",
+        //         pt: "Catálogo virtual para aluguel de vestidos de casamento. Buscando melhorar a experiência do cliente na busca por vestidos de casamento, foi desenvolvido um catálogo virtual com um design moderno e responsivo."
+        //     },
+        //     technologies: [SiReact, SiSass, SiFirebase, SiReactrouter],
+        //     techTitle: ["React", "Sass", "Firebase", "React Router"],
+        //     image: bridalStoreImage
+        // },
         {
             title: {
                 name: {
