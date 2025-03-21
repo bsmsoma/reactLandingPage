@@ -72,17 +72,17 @@ export default function Projects() {
     const { theme } = useTheme();
     
     const projectsData = [
-        {
-            title: {
-                name: "Requinte - Formal Wear Rental",
-                url: "https://requinte.netlify.app/" 
-            },
-            type: "Virtual Catalog",
-            description: "Virtual catalog for formal wear rental. Aiming to enhance the customer experience in searching for formal wear, a virtual catalog was developed with a modern and responsive design.",
-            technologies: [SiReact, SiSass, SiFirebase, SiReactrouter],
-            techTitle: ["React", "Sass", "Firebase", "React Router"],
-            image: bridalStoreImage
-        },
+        // {
+        //     title: {
+        //         name: "Requinte - Formal Wear Rental",
+        //         url: "https://requinte.netlify.app/" 
+        //     },
+        //     type: "Virtual Catalog",
+        //     description: "Virtual catalog for formal wear rental. Aiming to enhance the customer experience in searching for formal wear, a virtual catalog was developed with a modern and responsive design.",
+        //     technologies: [SiReact, SiSass, SiFirebase, SiReactrouter],
+        //     techTitle: ["React", "Sass", "Firebase", "React Router"],
+        //     image: bridalStoreImage
+        // },
         {
             title: {
                 name: "RMC Machines",
