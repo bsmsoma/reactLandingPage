@@ -159,11 +159,14 @@ $montserratFont: 'Montserrat', sans-serif;
   }
 
   @include mobile {
-    padding: 1rem;
+    padding: 0.8rem;
     height: 3.5rem;
 
     .titles {
       white-space: nowrap;
+      h3 {
+        font-size: 1rem;
+      }
     }
 
     .navbarlinks {
