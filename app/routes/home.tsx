@@ -15,7 +15,7 @@ export function meta({ }: Route.MetaArgs) {
         { name: "author", content: "Brunno Mota" },
         { name: "robots", content: "index, follow" },
         // Open Graph / Facebook
-        { property: "og:site_name", content: "Brunno Mota Portfolio" },
+        { property: "og:site_name", content: "Brunno Mota - Portfolio" },
         { property: "og:title", content: "Brunno Mota - Desenvolvedor Full Stack" },
         { property: "og:description", content: "Desenvolvedor Full Stack especializado em JavaScript, TypeScript, React, Node.js e SQL. Portfólio profissional com projetos de desenvolvimento web." },
         { property: "og:type", content: "website" },
