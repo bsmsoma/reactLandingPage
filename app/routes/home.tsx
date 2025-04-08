@@ -2,13 +2,28 @@ import type { Route } from "./+types/home";
 import { useTheme } from "../contexts/ThemeContext";
 import { Spin } from "antd";
 import { useLanguage } from "~/contexts/LanguageContext";
+import profilePic from "~/assets/image/profilepic2.png";
 
 export function meta({ }: Route.MetaArgs) {
     return [
-        { title: "Brunno Mota" },
-        { name: "description", content: "Brunno Mota" },
-        { property: "og:title", content: "Brunno Mota" },
-        { property: "og:description", content: "Portfolio profissional" }
+        { title: "Brunno Mota - Desenvolvedor Full Stack" },
+        { name: "description", content: "Desenvolvedor Full Stack especializado em JavaScript, TypeScript, React, Node.js e SQL. Portfólio profissional com projetos de desenvolvimento web, sites corporativos e landing pages." },
+        { name: "keywords", content: "desenvolvedor full stack, JavaScript, TypeScript, React, Node.js, SQL, desenvolvimento web, portfolio, programador, frontend, backend" },
+        { name: "author", content: "Brunno Mota" },
+        { name: "robots", content: "index, follow" },
+        { property: "og:title", content: "Brunno Mota - Desenvolvedor Full Stack" },
+        { property: "og:description", content: "Desenvolvedor Full Stack especializado em JavaScript, TypeScript, React, Node.js e SQL. Portfólio profissional com projetos de desenvolvimento web." },
+        { property: "og:type", content: "website" },
+        { property: "og:url", content: "https://brunnomota.com" },
+        { property: "og:image", content: "https://brunnomota.com" + profilePic },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
+        { property: "og:image:alt", content: "Brunno Mota - Desenvolvedor Full Stack" },
+        { property: "twitter:card", content: "summary_large_image" },
+        { property: "twitter:title", content: "Brunno Mota - Desenvolvedor Full Stack" },
+        { property: "twitter:description", content: "Desenvolvedor Full Stack especializado em JavaScript, TypeScript, React, Node.js e SQL. Portfólio profissional com projetos de desenvolvimento web." },
+        { property: "twitter:image", content: "https://brunnomota.com" + profilePic },
+        { property: "twitter:image:alt", content: "Brunno Mota - Desenvolvedor Full Stack" }
     ];
 }
 
