@@ -2,11 +2,10 @@ import type { Route } from "./+types/home";
 import { useTheme } from "../contexts/ThemeContext";
 import { Spin } from "antd";
 import { useLanguage } from "~/contexts/LanguageContext";
-import profilePic from "~/assets/image/profilepic2.png";
 
 export function meta({ }: Route.MetaArgs) {
     const baseUrl = "https://brunnomota.com.br";
-    const imageUrl = new URL(profilePic, baseUrl).toString();
+    const imageUrl = `${baseUrl}/assets/image/profilepic2.png`;
     
     return [
         { title: "Brunno Mota - Desenvolvedor Full Stack" },
@@ -23,19 +22,11 @@ export function meta({ }: Route.MetaArgs) {
         { property: "og:image", content: imageUrl },
         { property: "og:image:secure_url", content: imageUrl },
         { property: "og:image:type", content: "image/png" },
-        { property: "og:image:width", content: "1200" },
-        { property: "og:image:height", content: "630" },
+        { property: "og:image:width", content: "300" },
+        { property: "og:image:height", content: "300" },
         { property: "og:image:alt", content: "Brunno Mota - Desenvolvedor Full Stack" },
-        // Twitter
-        { name: "twitter:card", content: "summary_large_image" },
-        { name: "twitter:site", content: "@brunnomota" }, // Se você tiver Twitter
-        { name: "twitter:creator", content: "@brunnomota" }, // Se você tiver Twitter
-        { name: "twitter:title", content: "Brunno Mota - Desenvolvedor Full Stack" },
-        { name: "twitter:description", content: "Desenvolvedor Full Stack especializado em JavaScript, TypeScript, React, Node.js e SQL. Portfólio profissional com projetos de desenvolvimento web." },
-        { name: "twitter:image", content: imageUrl },
-        { name: "twitter:image:alt", content: "Brunno Mota - Desenvolvedor Full Stack" },
         // WhatsApp específico
-        { property: "og:image:width", content: "300" }, // Tamanho mais adequado para WhatsApp
+        { property: "og:image:width", content: "300" },
         { property: "og:image:height", content: "300" }
     ];
 }
