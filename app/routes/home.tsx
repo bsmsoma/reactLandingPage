@@ -14,15 +14,15 @@ export function meta({ }: Route.MetaArgs) {
         { property: "og:title", content: "Brunno Mota - Desenvolvedor Full Stack" },
         { property: "og:description", content: "Desenvolvedor Full Stack especializado em JavaScript, TypeScript, React, Node.js e SQL. Portfólio profissional com projetos de desenvolvimento web." },
         { property: "og:type", content: "website" },
-        { property: "og:url", content: "https://brunnomota.com" },
-        { property: "og:image", content: "https://brunnomota.com" + profilePic },
+        { property: "og:url", content: "https://brunnomota.com.br" },
+        { property: "og:image", content: "https://brunnomota.com.br" + profilePic },
         { property: "og:image:width", content: "1200" },
         { property: "og:image:height", content: "630" },
         { property: "og:image:alt", content: "Brunno Mota - Desenvolvedor Full Stack" },
         { property: "twitter:card", content: "summary_large_image" },
         { property: "twitter:title", content: "Brunno Mota - Desenvolvedor Full Stack" },
         { property: "twitter:description", content: "Desenvolvedor Full Stack especializado em JavaScript, TypeScript, React, Node.js e SQL. Portfólio profissional com projetos de desenvolvimento web." },
-        { property: "twitter:image", content: "https://brunnomota.com" + profilePic },
+        { property: "twitter:image", content: "https://brunnomota.com.br" + profilePic },
         { property: "twitter:image:alt", content: "Brunno Mota - Desenvolvedor Full Stack" }
     ];
 }
