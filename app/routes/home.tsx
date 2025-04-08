@@ -2,11 +2,10 @@ import type { Route } from "./+types/home";
 import { useTheme } from "../contexts/ThemeContext";
 import { Spin } from "antd";
 import { useLanguage } from "~/contexts/LanguageContext";
-import profilePic from "../assets/image/profile.jpeg"
 
 export function meta({ }: Route.MetaArgs) {
     const baseUrl = "https://brunnomota.com.br";
-    
+    const imageUrl = `${baseUrl}/assets/image/optimized/profile-optimized.jpg`;
     
     return [
         { title: "Brunno Mota - Desenvolvedor Full Stack" },
@@ -20,12 +19,15 @@ export function meta({ }: Route.MetaArgs) {
         { property: "og:description", content: "Desenvolvedor Full Stack especializado em JavaScript, TypeScript, React, Node.js e SQL. Portfólio profissional com projetos de desenvolvimento web." },
         { property: "og:type", content: "website" },
         { property: "og:url", content: baseUrl },
-        { property: "og:image", content: profilePic },
-        { property: "og:image:secure_url", content: profilePic },
-        { property: "og:image:type", content: "image/png" },
-        { property: "og:image:width", content: "300" },
-        { property: "og:image:height", content: "300" },
+        { property: "og:image", content: imageUrl },
+        { property: "og:image:secure_url", content: imageUrl },
+        { property: "og:image:type", content: "image/jpeg" },
+        { property: "og:image:width", content: "1200" },
+        { property: "og:image:height", content: "630" },
         { property: "og:image:alt", content: "Brunno Mota - Desenvolvedor Full Stack" },
+        // Cache e Performance
+        { name: "cache-control", content: "public, max-age=31536000" },
+        { name: "expires", content: "31536000" },
         // WhatsApp específico
         { property: "og:image:width", content: "300" },
         { property: "og:image:height", content: "300" }
