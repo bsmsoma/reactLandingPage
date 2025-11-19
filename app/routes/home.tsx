@@ -44,13 +44,17 @@ export default function Hero() {
             en: "A bit about me",
             pt: "Um pouco sobre mim",
         },
-        aboutMeIntro: {
-            en: (<>I have a degree in Database Technology from Senac - Santo Amaro and a strong passion for software development. Currently, I am enhancing my skills in <b>JavaScript, TypeScript, React, Node.js, and SQL</b>, aiming to become a well-rounded full-stack developer. </>),
-            pt: (<>Formado em Tecnologia de Banco de Dados do Senac - Santo Amaro e com uma paixão forte pelo desenvolvimento de software. Atualmente, estou aprimorando minhas habilidades em <b>JavaScript, TypeScript, React, Node.js, e SQL</b>, visando me tornar um desenvolvedor full-stack completo.</>),
+        aboutMeFirstParagraph: {
+            en: "Graduated in Database Technology from Senac – Santo Amaro and currently studying Software Engineering at Ulbra, I continue evolving with a focus on modern, scalable, and future-oriented software development.",
+            pt: "Formado em Tecnologia de Banco de Dados pelo Senac – Santo Amaro e atualmente cursando Engenharia de Software na Ulbra, sigo evoluindo com foco no desenvolvimento de software moderno, escalável e orientado ao futuro.",
         },
-        aboutmeSecondParagraph: {
-            en: "I have experience building applications that integrate dynamic front-end interfaces, robust APIs, and efficient database management. My focus is on developing scalable, high-performance, and user-friendly solutions while continuously learning and improving my technical expertise.",
-            pt: "Tenho experiência em construir aplicativos que integram interfaces front-end dinâmicas, APIs robustas e gerenciamento de banco de dados eficiente. Meu foco é desenvolver soluções escaláveis, de alto desempenho e de fácil uso, enquanto continuo aprendendo e aprimorando minha expertise técnica.",
+        aboutMeSecondParagraph: {
+            en: "I have been deepening my knowledge in JavaScript, TypeScript, and Node.js, developing complete applications that integrate dynamic interfaces with well-structured APIs. In recent months, I have also been studying and applying Artificial Intelligence — especially in the use of APIs and language models — to create smarter, automated, and more efficient solutions.",
+            pt: "Tenho me aprofundado em JavaScript, TypeScript e Node.js, desenvolvendo aplicações completas que integram interfaces dinâmicas com APIs bem estruturadas. Nos últimos meses, também venho estudando e aplicando Inteligência Artificial — especialmente no uso de APIs e modelos de linguagem — para criar soluções mais inteligentes, automatizadas e eficientes.",
+        },
+        aboutMeThirdParagraph: {
+            en: "My goal is to establish myself as a full-stack developer with strong TypeScript expertise and the ability to apply AI in practice, building high-performance, user-friendly systems prepared for sustainable growth.",
+            pt: "Meu objetivo é me consolidar como um desenvolvedor full-stack com forte domínio em TypeScript e com capacidade de aplicar IA na prática, construindo sistemas de alto desempenho, fáceis de usar e preparados para crescer de forma sustentável.",
         },
     };
     return (
@@ -60,10 +64,13 @@ export default function Hero() {
             <div className={`about-me ${theme}`}>
                 <h3>{textTranslations.aboutMe[language as keyof typeof textTranslations.aboutMe]}</h3>
                 <p>
-                    {textTranslations.aboutMeIntro[language as keyof typeof textTranslations.aboutMeIntro]}
+                    {textTranslations.aboutMeFirstParagraph[language as keyof typeof textTranslations.aboutMeFirstParagraph]}
                 </p>
                 <p>
-                    {textTranslations.aboutmeSecondParagraph[language as keyof typeof textTranslations.aboutmeSecondParagraph]}
+                    {textTranslations.aboutMeSecondParagraph[language as keyof typeof textTranslations.aboutMeSecondParagraph]}
+                </p>
+                <p>
+                    {textTranslations.aboutMeThirdParagraph[language as keyof typeof textTranslations.aboutMeThirdParagraph]}
                 </p>
             </div>
         </section>
