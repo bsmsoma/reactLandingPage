@@ -67,8 +67,8 @@ export default function Contact() {
                     <FaEnvelope className="icon" />
                     <h3>Email</h3>
                     <p>{textTranslations.email[language as keyof typeof textTranslations.email]}</p>
-                    <a href="mailto:bsmsoma@gmail.com" className="contact-link">
-                        bsmsoma@gmail.com
+                    <a href="mailto:soma.bsm@gmail.com" className="contact-link">
+                        soma.bsm@gmail.com
                     </a>
                 </div>
 

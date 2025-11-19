@@ -158,6 +158,10 @@ $montserratFont: 'Montserrat', sans-serif;
     display: none;
   }
 
+  .mobile-menu-container {
+    display: none;
+  }
+
   @include mobile {
     padding: 0.8rem;
     height: 3.5rem;
