@@ -4,6 +4,7 @@ import { useTheme } from "../contexts/ThemeContext";
 import { useLanguage } from "../contexts/LanguageContext";
 import { FaBars } from "react-icons/fa";
 import { Space, Switch } from 'antd';
+import logoBrunno from "../assets/icons/logoBrunno.svg";
 
 export function Navbar() {
 
@@ -50,8 +51,11 @@ export function Navbar() {
   return (
     <nav className={`navbar ${theme}`}>
       <div className={`titles ${theme}`}>
-        <h1>Brunno Mota</h1>
-        <h3>{textTranslations.subtitle[language as keyof typeof textTranslations.subtitle]}</h3>
+        <img src={logoBrunno} alt="Logo Brunno Mota" className={`logo ${theme}`} />
+        <div className="name-container">
+          <h1>Brunno Mota</h1>
+          <h3>{textTranslations.subtitle[language as keyof typeof textTranslations.subtitle]}</h3>
+        </div>
       </div>
       <ul className={`navbarlinks ${theme}`}>
         <Space direction="vertical">
