@@ -517,15 +517,26 @@ footer {
     font-size: 3rem;
   }
 
+  @include mobile {
+    padding: 4rem 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
   .bento-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     padding: 1rem;
+    max-width: 1400px;
+    margin: 0 auto;
 
     @include mobile {
-      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      grid-template-columns: 1fr;
       padding: 0.5rem;
+      gap: 1.5rem;
     }
 
     .project-card {
