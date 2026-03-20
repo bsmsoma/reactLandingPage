@@ -17,6 +17,7 @@ import rmcImage from "../assets/image/exemplosite.png" //temporario
 import joaoVitorImage from "../assets/image/exemplosite2.png" //temporario
 import bridalStoreImage from "../assets/image/requintetemp.png" //temporario
 import sidneyImage from "../assets/image/sidneytemp.png" //temporario
+import eloProtectImage from "../assets/image/eloprotect.png" //temporario
 import { useLanguage } from "../contexts/LanguageContext";
 
 //todo: adicionar imagens dos projetos
@@ -172,6 +173,26 @@ export default function Projects() {
             technologies: [SiHtml5, SiCss3, SiJavascript],
             techTitle: ["HTML", "CSS", "Javascript"],
             image: sidneyImage
+        },
+        {
+            title: {
+                name: {
+                    en: "Elo Protect - Insurance",
+                    pt: "Elo Protect - Seguros"
+                },
+                url: "https://eloprotect.com.br/"
+            },
+            type: {
+                en: "Corporate Website",
+                pt: "Site Corporativo"
+            },
+            description: {
+                en: "Corporate website developed for an insurance company. Focused on providing a modern and responsive design for the company's website.",
+                pt: "Site corporativo desenvolvido para uma empresa de seguros. Focado em fornecer um design moderno e responsivo para o site da empresa."
+            },
+            technologies: [SiHtml5, SiCss3, SiJavascript],
+            techTitle: ["HTML", "CSS", "Javascript"],
+            image: eloProtectImage
         }
         // Add more projects GOGOGO!
     ];
