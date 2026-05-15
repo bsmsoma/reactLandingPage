@@ -18,6 +18,7 @@ import joaoVitorImage from "../assets/image/exemplosite2.png" //temporario
 import bridalStoreImage from "../assets/image/requintetemp.png" //temporario
 import sidneyImage from "../assets/image/sidneytemp.png" //temporario
 import eloProtectImage from "../assets/image/eloprotect.png" //temporario
+import esdraImage from "../assets/image/exemplosite.png" //temporario
 import { useLanguage } from "../contexts/LanguageContext";
 
 //todo: adicionar imagens dos projetos
@@ -193,6 +194,26 @@ export default function Projects() {
             technologies: [SiHtml5, SiCss3, SiJavascript],
             techTitle: ["HTML", "CSS", "Javascript"],
             image: eloProtectImage
+        }
+        ,{
+            title: {
+                name: {
+                    en: "Esdra Aromas",
+                    pt: "Esdra Aromas"
+                },
+                url: "https://github.com/bsmsoma/esdra"
+            },
+            type: {
+                en: "E-commerce Platform",
+                pt: "Plataforma E-commerce"
+            },
+            description: {
+                en: "Full-stack e-commerce platform for aromatic products. Features customer authentication, product catalog with filters, shopping cart, Mercado Pago checkout, order tracking, and a complete admin dashboard for product and order management.",
+                pt: "Plataforma e-commerce full-stack para produtos aromáticos. Conta com autenticação de usuário, catálogo de produtos com filtros, carrinho de compras, checkout via Mercado Pago, rastreamento de pedidos e painel administrativo completo para gestão de produtos e pedidos."
+            },
+            technologies: [SiReact, SiFirebase, SiReactrouter, SiSass],
+            techTitle: ["React", "Firebase", "React Router", "Sass"],
+            image: esdraImage
         }
         // Add more projects GOGOGO!
     ];
