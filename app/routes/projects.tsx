@@ -201,7 +201,7 @@ export default function Projects() {
                     en: "Esdra Aromas",
                     pt: "Esdra Aromas"
                 },
-                url: "https://github.com/bsmsoma/esdra"
+                url: "https://esdraaromas.com.br"
             },
             type: {
                 en: "E-commerce Platform",
