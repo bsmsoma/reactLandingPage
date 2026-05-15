@@ -18,7 +18,7 @@ import joaoVitorImage from "../assets/image/exemplosite2.png" //temporario
 import bridalStoreImage from "../assets/image/requintetemp.png" //temporario
 import sidneyImage from "../assets/image/sidneytemp.png" //temporario
 import eloProtectImage from "../assets/image/eloprotect.png" //temporario
-import esdraImage from "../assets/image/exemplosite.png" //temporario
+import esdraImage from "../assets/image/esdraaromas.jpg"
 import { useLanguage } from "../contexts/LanguageContext";
 
 //todo: adicionar imagens dos projetos
