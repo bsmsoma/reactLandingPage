@@ -19,6 +19,7 @@ import bridalStoreImage from "../assets/image/requintetemp.png" //temporario
 import sidneyImage from "../assets/image/sidneytemp.png" //temporario
 import eloProtectImage from "../assets/image/eloprotect.png" //temporario
 import esdraImage from "../assets/image/esdraaromas.jpg"
+import soufitImage from "../assets/image/soufitThumbnail.jpg"
 import { useLanguage } from "../contexts/LanguageContext";
 
 //todo: adicionar imagens dos projetos
@@ -214,6 +215,26 @@ export default function Projects() {
             technologies: [SiReact, SiFirebase, SiReactrouter, SiSass],
             techTitle: ["React", "Firebase", "React Router", "Sass"],
             image: esdraImage
+        }
+        ,{
+            title: {
+                name: {
+                    en: "Soufit",
+                    pt: "Soufit"
+                },
+                url: "https://soufit.netlify.app"
+            },
+            type: {
+                en: "E-commerce Platform",
+                pt: "Plataforma E-commerce"
+            },
+            description: {
+                en: "E-commerce platform for fitness products. Features product catalog, shopping cart, and Firebase-powered backend for authentication and data management.",
+                pt: "Plataforma e-commerce para produtos fitness. Conta com catálogo de produtos, carrinho de compras e backend com Firebase para autenticação e gerenciamento de dados."
+            },
+            technologies: [SiReact, SiSass, SiFirebase],
+            techTitle: ["React", "Sass", "Firebase"],
+            image: soufitImage
         }
         // Add more projects GOGOGO!
     ];
